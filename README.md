@@ -41,6 +41,13 @@ La récupération et le stockage a été obtenu via le notebook lienXX.
 
 IMAGE DE L'ARCHITECTURE
 
+## 3. Création des tables pour répondre aux requêtes
+
+## 4. Peformances
+
+## 5. Conclusions voies d'améliorations
+
+
 
 
  
