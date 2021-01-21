@@ -10,3 +10,4 @@ Proposer un système de stockage distribué, résilient et performant sur AWS pe
 * dresser la cartographie des relations entre les pays d’après le ton des articles : pour chaque paire (pays1, pays2), calculer le nombre d’article, le ton moyen (aggrégations sur Année/Mois/Jour, filtrage par pays ou carré de coordonnées)
 
 
+![text](test.png) : insere une image à l’url.png
