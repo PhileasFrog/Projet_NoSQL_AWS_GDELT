@@ -30,5 +30,10 @@ La récupération et le stockage a été obtenu via le notebook lienXX.
 
 ![test.png](https://github.com/PhileasFrog/Projet_GDELT/blob/main/test.PNG)
 
+**ETL** : Pour effectuer l'étape ETL (extraction analyser et chargement) des données bruts de stocker le résultat sous forme de table persistantes sur notre cluster Cassandra, nous avons utilisé un cluster EMR avec le framework Spark et Zeppelin préinstallé. Spark permet d'accélérer les traitement par utilisation de la RAM et echainement des différents traitement.
+
+Spécification : EMR m4.large Spark Zeppelin 0.8.0
+
+
 
  
