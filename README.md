@@ -22,7 +22,7 @@ La récupération et le stockage a été obtenu via le notebook lienXX.
 
 ![test.png](https://github.com/PhileasFrog/Projet_GDELT/blob/main/test.PNG)
 
-**Base de données NoSQL** : Ce projet nous place dans une problématique gestion et utilisation de base de données volumineuse peu structurée. Nous avons considèrer que l’objectif était de proposer une architecture construire pour fournir une base de donnée NoSQL permettant au client d’effectuer rapidement de requêtes prédéfinies avec une faible latence. Nous avons choisi Cassandra comme gestion de base de données car outre sa fiabilité et son utilisation courant il présente les avantages suivants :
+**Base de données NoSQL** : Ce projet nous place dans une problématique gestion et utilisation de base de données volumineuse peu structurée. Nous avons considèré que l’objectif était de proposer une architecture construire pour fournir une base de donnée NoSQL permettant au client d’effectuer rapidement de requêtes prédéfinies avec une faible latence. Nous avons choisi Cassandra comme gestion de base de données car outre sa fiabilité et son utilisation courant il présente les avantages suivants :
 *	Facile d’installation
 *	Résilient à la panne
 *	Passage à l'échelle avec bonne performance 
