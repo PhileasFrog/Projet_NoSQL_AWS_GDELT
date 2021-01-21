@@ -1,7 +1,7 @@
 # Projet NOSQL MSBGD 2020-2021
 ## Contributeurs Bertrand Coureaud - Dominique Jeancler - Thomas Trivellato - Roberto Nobrega
 
-1.Objectif
+## 1.Objectif
 
 Proposer un système de stockage distribué, résilient et performant sur AWS permettant de requêter sur la base de données GDELT les recherches suivantes : 
 a.	afficher le nombre d’articles/évènements qui parlent de COVID qu’il y a eu pour chaque triplet (jour, pays de l’évènement, langue de l’article)
@@ -15,7 +15,7 @@ Contraintes :
 *	Pre-charger une année de données dans votre cluster
 *	Utiliser AWS pour déployer le cluster.
 
-2. Choix de l’architecture
+## 2. Choix de l’architecture
 
 **Stockage données brutes** : Pour répondre aux contraintes, on stocke l’ensemble des zips de l’année 2020 dans un bucket S3. Pour un an cela représente XXGo de données.
 La récupération et le stockage a été obtenu via le notebook lienXX.
