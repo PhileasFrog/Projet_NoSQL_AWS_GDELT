@@ -1,1 +1,2 @@
-# Projet_GDELT par X
+# Projet
+## Contributeurs Bertrand Coureaud - Dominique Jeancler - Thomas Trivellato - Roberto Nobrega
