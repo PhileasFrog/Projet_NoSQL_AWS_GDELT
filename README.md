@@ -17,10 +17,10 @@ Contraintes :
 
 ## 2. Choix de l’architecture
 
-**Stockage données brutes** : Pour répondre aux contraintes, on stocke l’ensemble des zips de l’année 2020 dans un bucket S3. Pour un an cela représente XXGo de données.
+**Stockage données brutes** : Pour répondre aux contraintes, on stocke l’ensemble des zips de l’année 2020 dans un bucket S3. Pour un an cela représente 500Go de données.
 La récupération et le stockage a été obtenu via le notebook lienXX.
 
-![test.png](https://github.com/PhileasFrog/Projet_GDELT/blob/main/test.PNG)
+![test.png](https://github.com/PhileasFrog/Projet_GDELT/blob/main/bucketbc.png)
 
 à remplacer par IMAGE SNAPSHOT BUCKET ROBERTO BERTRAND OU TOM
 
