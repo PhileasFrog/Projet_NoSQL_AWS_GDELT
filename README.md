@@ -22,8 +22,6 @@ La récupération et le stockage a été obtenu via le notebook lienXX.
 
 ![test.png](https://github.com/PhileasFrog/Projet_GDELT/blob/main/bucketbc.png)
 
-à remplacer par IMAGE SNAPSHOT BUCKET ROBERTO BERTRAND OU TOM
-
 **Base de données NoSQL** : Ce projet nous place dans une problématique gestion et utilisation de base de données volumineuse peu structurée. Nous avons considèré que l’objectif était donc de proposer une architecture fournissant une base de donnée NoSQL permettant au client d’effectuer rapidement de requêtes prédéfinies avec une faible latence. Nous avons choisi Cassandra avec 3 noeuds (pour résister à la panne d'un noeud) car outre son utilisation courante et sa fiabilité présente les avantages suivants :
 *	Facile d’installation
 *	Résilient à la panne
