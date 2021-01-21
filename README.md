@@ -22,17 +22,24 @@ La récupération et le stockage a été obtenu via le notebook lienXX.
 
 ![test.png](https://github.com/PhileasFrog/Projet_GDELT/blob/main/test.PNG)
 
-**Base de données NoSQL** : Ce projet nous place dans une problématique gestion et utilisation de base de données volumineuse peu structurée. Nous avons considèré que l’objectif était de proposer une architecture construire pour fournir une base de donnée NoSQL permettant au client d’effectuer rapidement de requêtes prédéfinies avec une faible latence. Nous avons choisi Cassandra comme gestion de base de données car outre sa fiabilité et son utilisation courant il présente les avantages suivants :
+à remplacer par IMAGE SNAPSHOT BUCKET ROBERTO BERTRAND OU TOM
+
+**Base de données NoSQL** : Ce projet nous place dans une problématique gestion et utilisation de base de données volumineuse peu structurée. Nous avons considèré que l’objectif était donc de proposer une architecture fournissant une base de donnée NoSQL permettant au client d’effectuer rapidement de requêtes prédéfinies avec une faible latence. Nous avons choisi Cassandra avec 3 noeuds (pour résister à la panne d'un noeud) car outre son utilisation courante et sa fiabilité présente les avantages suivants :
 *	Facile d’installation
 *	Résilient à la panne
-*	Passage à l'échelle avec bonne performance 
+*	Passage à l'échelle avec bonne performance
+* Typage fort
 *	Présence d'un langague de requêtage et d'un connecteur avec spark pour les requêtes.
+
+*Spécification* : EC2 3 instances "t2.micro"
 
 ![test.png](https://github.com/PhileasFrog/Projet_GDELT/blob/main/test.PNG)
 
-**ETL** : Pour effectuer l'étape ETL (extraction analyser et chargement) des données bruts de stocker le résultat sous forme de table persistantes sur notre cluster Cassandra, nous avons utilisé un cluster EMR avec le framework Spark et Zeppelin préinstallé. Spark permet d'accélérer les traitement par utilisation de la RAM et echainement des différents traitement.
+**ETL** : Pour effectuer l'étape ETL (extraction analyser et chargement) sur les données bruts sotckées sur S3 et avant chargement sous forme de table persistantes sur notre cluster Cassandra, nous avons utilisé un cluster EMR avec le framework Spark et Zeppelin préinstallé. Spark permet d'accélérer les traitement par utilisation de la RAM et d'enchainer différentes phase de traitement à l'inverse de MapReduce. Nous sommes passés par EMR pour éviter d'avoir à réinstaller nous même Spark et Zeppelin.
 
-Spécification : EMR m4.large Spark Zeppelin 0.8.0
+*Spécification* : EMR "m4.large" Spark 2.3.2 Zeppelin 0.8.0
+
+IMAGE DE L'ARCHITECTURE
 
 
 
