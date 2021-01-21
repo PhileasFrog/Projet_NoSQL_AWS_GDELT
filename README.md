@@ -9,11 +9,17 @@ b.	pour un pays donné en paramètre, affichez les évènements qui y ont eu pla
 c.	pour une source de donnés passée en paramètre (gkg.SourceCommonName) affichez les thèmes, personnes, lieux dont les articles de cette sources parlent ainsi que le le nombre d’articles et le ton moyen des articles (pour chaque thème/personne/lieu); permettez une agrégation par jour/mois/année.
 d.	est-ce qu’on observe des patterns dans l’evolution qui pourraient nous permettre d’identifier la prochaine vague/pandemie
 
-Contraintes :
+**Contraintes** :
 *	Utiliser au moins 1 technologie vue en cours en expliquant les raisons de votre choix (SQL/Cassandra/MongoDB/Spark/Neo4j).
 *	Le système doit pouvoir continuer après la panne sur un nœud
 *	Pre-charger une année de données dans votre cluster
 *	Utiliser AWS pour déployer le cluster.
+
+**Livrables**
+
+Vous devrez fournir:
+* une archive avec votre code source (ou un lien sur github…)
+* une courte présentation de votre architecture, modélisation, les avantages et inconvénients, des choix de modélisation et d’architecture, volumétrie, limites et contraintes (max 10 slides de présentation)
 
 ## 2. Choix de l’architecture
 
