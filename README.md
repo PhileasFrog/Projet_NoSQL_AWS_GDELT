@@ -43,6 +43,14 @@ IMAGE DE L'ARCHITECTURE
 
 ## 3. Création des tables pour répondre aux requêtes
 
+* Préambule compte tenu de l'énoncé nous avons considérer que le filtre COVID était appliqué sur l'ensemble des requêtes. Par ailleurs ne trouvant que peu de thème avec la mention "COVID", nous avons pris la décision d'ajouter le terme "CORONAVIRUS" dans le filtre. Le notebook Zeppelin pour accéder à la phase ETL et requête est accessible sur ce lien XXX.
+
+### 3.1 Requête 1
+
+### 3.2 Requête 1
+
+### 3.3 Requête 1
+
 ## 4. Peformances
 
 ## 5. Conclusions voies d'améliorations
