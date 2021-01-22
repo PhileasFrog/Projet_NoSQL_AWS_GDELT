@@ -1,5 +1,5 @@
 # Projet NOSQL MSBGD 2020-2021
-## Contributeurs Bertrand Coureaud - Dominique Jeancler - Thomas Trivellato - Roberto Nobrega
+## Contributeurs Bertrand Coureaud - Dominique Jeancler - Roberto Nobrega - Thomas Trivellato 
 
 ## 1.Objectif
 
