@@ -24,13 +24,16 @@ d.	est-ce qu’on observe des patterns dans l’evolution qui pourraient nous pe
 *	Utiliser AWS pour déployer le cluster.
 
 **Livrables**
+
 Vous devrez fournir:
 * une archive avec votre code source (ou un lien sur github…)
 * une courte présentation de votre architecture, modélisation, les avantages et inconvénients, des choix de modélisation et d’architecture, volumétrie, limites et contraintes (max 10 slides de présentation)
 
 ## 2. Choix de l’architecture et justification
 
-Pour répondre aux contraintes, on propose une solution entièrement hébergée sur AWS. Stockage sur S3, traitement via un cluster Spark et persistance de la sortie du traitement sur une base de donnée Cassandra installée sur des instances EC2. 
+*Descriptif :*
+
+Pour répondre aux contraintes, on propose une solution entièrement hébergée sur AWS. Stockage sur S3, traitement via un cluster Spark sur EMR et persistance de la sortie du traitement sur une base de donnée Cassandra installée sur des instances EC2. 
 
 Le process se découpe en 3 étapes :
 
@@ -44,11 +47,9 @@ La source de la phase de récupération de données est disponible ici tandis qu
 
 Justificactions :
 
-Pour exécuter du traitement massif en parallèle, on a besoin d’un outil type Spark. On a donc choisi par facilité un cluster EMR avec Spark et l’interface Zeppelin préinstallé. Zeppelin a l’avantage notamment d’offrir des outils intégrés de visualisation très pratiques. 
+Pour exécuter du traitement massif en parallèle, on a besoin d’un outil type Spark. On a donc choisi par un cluster EMR avec Spark et l’interface Zeppelin préinstallée. Zeppelin a l’avantage notamment d’offrir des outils intégrés de visualisation très pratiques. Un inconvénient rencontré lors du projet est la nécessité de reconfigurer notre interpreteur Zeppelin à chaque démarrage de cluster (installation de fichier jar et adresssage des instances Cassandra). Nous n'avons pas trouvé de solution pour sauvegarder ces paramètres contrairement à certains camarades.
 
-Concernant, la gestion base de données, l'équipe a choisi Cassandra car c’est un outil très répandu et fiable et qui offre une bonne performance pour le passage à l’échelle. Par ailleurs parmi les outils noSQL vus en cours, l'équipe a pensé que cette solution s’adaptait à la problèmatique compte tenu de la nature de la donnée à écrire (structuré et typé via les dataframes) et d'un point de vue confort client Cassandra ayant une très bonne performance en lecture et un langage de requête familier.
-
-Pour finir nous avons choisi à minima une installation avec 3 instances pour tolérer la panne d’un nœud comme exigé dnas le cahier des charges.
+Concernant, la gestion base de données, l'équipe a choisi Cassandra car c’est un outil très répandu et fiable et qui offre une bonne performance pour le passage à l’échelle. Par ailleurs parmi les outils noSQL vus en cours, l'équipe a pensé que cette solution s’adaptait à la problèmatique compte tenu de la nature de la donnée à écrire (structuré et typé via les dataframes) et d'un point de vue confort client Cassandra ayant une très bonne performance en lecture et un langage de requête familier. En utilisant des machines sur EC2 nous pouvons garder notre installation et base de donnes à moindre coût. Pour finir nous avons choisi à minima une installation avec 3 instances pour tolérer la panne d’un nœud comme exigé dnas le cahier des charges.
 
 ## 3. Création des tables pour répondre aux requêtes
 
