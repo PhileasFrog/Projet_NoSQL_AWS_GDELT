@@ -33,7 +33,7 @@ Vous devrez fournir:
 
 ## 2. Choix de l’architecture et justification
 
-**Descriptif **:
+**Descriptif ** :
 
 Pour répondre aux contraintes, on propose une solution entièrement hébergée sur AWS. Stockage sur S3, traitement via un cluster Spark sur EMR et persistance de la sortie du traitement sur une base de donnée Cassandra installée sur des instances EC2. 
 
@@ -75,7 +75,7 @@ Pour cette requête nous repartons du même dataframe post jointure entre event 
 
 Pour cette dernière requête nous nous concentrons maintenant uniquement sur les données gkg. Nous créons trois tables différentes pour faire le calcul du ton moyen en fonction du thème, de la personne ou du lieu.
 
-
+## 4. Insatalation
 
 
  
