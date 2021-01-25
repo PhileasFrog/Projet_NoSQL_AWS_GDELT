@@ -77,5 +77,34 @@ Pour cette dernière requête nous nous concentrons maintenant uniquement sur le
 
 ## 4. Installation
 
+**Spécificité compte educate** :
+
+Pour réaliser ce projet nous sommes partis du TP AWS disponible sur http://andreiarion.github.io/TP_AWS_Spark.html et des 2 notebooks de démarrage (chargement et exploration).
+Ayant buté sur un problème de connexion dû à la spécificité des comptes AWS educate ne permettant pas d'exécuter le json de téléchargement mis à disposition, nous avons longuement travailler en local sur les VM récupérées en début d'enseignement avant de pouvoir enfin basculer sur AWS une fois la solution apportée (nécessité de déclarer un identifiant de session "aws_session_token"). 
+
+**Configuration** :
+
+Une fois ayant basculé sur AWS nous avons donc choisi d'utiliser les mêmes configurations que durant le TP pour le cluster EMR (version 5.19 ; Spark 2.3.2 ; Zeppelin 0.8.0.). Pour Cassandra nous avons installé la version 3.11.9.
+
+**Connexion aux machines** :
+
+Une fois le cluster Spark EMR et les instances EC2 lancées, on récupère les DNS public du master EMR et des instance Cassandra EC2 pour se connecter en ssh.
+
+![adresseDNS](https://github.com/PhileasFrog/Projet_GDELT/blob/main/Screenshot/adresseDNS.png)
+
+**Lancement Cassandra** :
+
+Une fois connecté en ssh il faut lancer Cassandra sur chaque nœud
+`./cassandra`
+
+**Configuration Zeppelin**
+
+Pour faire alors communiquer notre Cluster Spark 2.3.2 avec nos instance Cassandra, nous avons dû utiliser 2 fichiers jar qu’on récupère en local :
+`wget https://repo1.maven.org/maven2/com/twitter/jsr166e/1.1.0/jsr166e-1.1.0.jar`
+`wget https://repo1.maven.org/maven2/com/datastax/spark/spark-cassandra-connector_2.11/2.3.2/spark-cassandra-connector_2.11-2.3.2.jar`
+
+on lance alors zeppelin en localhost et configurons l'interpreteur spark via l'ajout des 3 lignes suivantes :
+
+![configzeppelin](https://github.com/PhileasFrog/Projet_GDELT/blob/main/Screenshot/configzeppelin.png)
 
  
