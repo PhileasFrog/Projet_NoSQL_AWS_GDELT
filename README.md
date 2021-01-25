@@ -27,13 +27,13 @@ d.	est-ce qu’on observe des patterns dans l’evolution qui pourraient nous pe
 
 Vous devrez fournir:
 * une archive avec votre code source (ou un lien sur github…)
-> https://github.com/PhileasFrog/Projet_GDELT/tree/main/Zeppelin_notebooks
+> https://github.com/PhileasFrog/Projet_GDELT/tree/main/Zeppelin_notebooks (deux notebook : un pour la récupération des data, un pour ETL et query)
 * une courte présentation de votre architecture, modélisation, les avantages et inconvénients, des choix de modélisation et d’architecture, volumétrie, limites et contraintes (max 10 slides de présentation)
 > https://github.com/PhileasFrog/Projet_GDELT/tree/main/Presentation
 
 ## 2. Choix de l’architecture et justification
 
-*Descriptif :*
+**Descriptif **:
 
 Pour répondre aux contraintes, on propose une solution entièrement hébergée sur AWS. Stockage sur S3, traitement via un cluster Spark sur EMR et persistance de la sortie du traitement sur une base de donnée Cassandra installée sur des instances EC2. 
 
@@ -45,10 +45,9 @@ Comme illustré le process se découpe en 3 étapes :
 ![s3snap](https://github.com/PhileasFrog/Projet_GDELT/blob/main/Screenshot/bucketbc.png)
 * une phase ETL où le cluster Sark va lire les zips de S3, récupérer uniquement les informations d'intérêt pour les requêtes sous forme de dataframe et enfin écrire sur nos instances Cassandra EC2.
 * une phase de lecture, où depuis le cluster Spark, le client peut interoger et visualiser les résultats de ses requêtes
+![requetevisu] https://github.com/PhileasFrog/Projet_GDELT/blob/main/Screenshot/sqlsh.png
 
-La source de la phase de récupération de données est disponible ici tandis que la phase ETL et requête et intégré dans le même notebook ici.
-
-*Justifications* :
+**Justifications** :
 
 Pour exécuter du traitement massif en parallèle, on a besoin d’un outil type Spark. On a donc choisi par un cluster EMR avec Spark et l’interface Zeppelin préinstallée. Zeppelin a l’avantage notamment d’offrir des outils intégrés de visualisation très pratiques. Un inconvénient rencontré lors du projet est la nécessité de reconfigurer notre interpreteur Zeppelin à chaque démarrage de cluster (installation de fichier jar et adresssage des instances Cassandra). Nous n'avons pas trouvé de solution pour sauvegarder ces paramètres contrairement à certains camarades.
 
