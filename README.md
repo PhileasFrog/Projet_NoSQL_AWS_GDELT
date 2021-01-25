@@ -75,7 +75,7 @@ Pour cette requête nous repartons du même dataframe post jointure entre event 
 
 Pour cette dernière requête nous nous concentrons maintenant uniquement sur les données gkg. Nous créons trois tables différentes pour faire le calcul du ton moyen en fonction du thème, de la personne ou du lieu.
 
-## 4. Insatalation
+## 4. Insatallation
 
 
  
