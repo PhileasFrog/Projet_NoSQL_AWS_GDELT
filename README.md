@@ -94,7 +94,10 @@ Une fois le cluster Spark EMR et les instances EC2 lancées, on récupère les D
 
 **Lancement Cassandra** :
 
-Une fois connecté en ssh il faut lancer Cassandra sur chaque nœud
+Une fois connecté en ssh il faut lancer Cassandra sur chaque nœud via les commandes :
+
+`cd apache-cassandra-3.11.9/bin/`
+
 `./cassandra`
 
 **Configuration Zeppelin**
