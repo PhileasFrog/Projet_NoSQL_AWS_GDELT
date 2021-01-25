@@ -90,7 +90,7 @@ Une fois ayant basculé sur AWS nous avons donc choisi d'utiliser les mêmes con
 
 Une fois le cluster Spark EMR et les instances EC2 lancées, on récupère les DNS public du master EMR et des instance Cassandra EC2 pour se connecter en ssh.
 
-![adresseDNS](https://github.com/PhileasFrog/Projet_GDELT/blob/main/Screenshot/adresseDNS.png)
+![adresseDNS](https://github.com/PhileasFrog/Projet_GDELT/blob/main/Screenshot/adresseDNS.PNG)
 
 **Lancement Cassandra** :
 
@@ -100,11 +100,13 @@ Une fois connecté en ssh il faut lancer Cassandra sur chaque nœud
 **Configuration Zeppelin**
 
 Pour faire alors communiquer notre Cluster Spark 2.3.2 avec nos instance Cassandra, nous avons dû utiliser 2 fichiers jar qu’on récupère en local :
+
 `wget https://repo1.maven.org/maven2/com/twitter/jsr166e/1.1.0/jsr166e-1.1.0.jar`
+
 `wget https://repo1.maven.org/maven2/com/datastax/spark/spark-cassandra-connector_2.11/2.3.2/spark-cassandra-connector_2.11-2.3.2.jar`
 
 on lance alors zeppelin en localhost et configurons l'interpreteur spark via l'ajout des 3 lignes suivantes :
 
-![configzeppelin](https://github.com/PhileasFrog/Projet_GDELT/blob/main/Screenshot/configzeppelin.png)
+![configzeppelin](https://github.com/PhileasFrog/Projet_GDELT/blob/main/Screenshot/configzeppelin.PNG)
 
  
