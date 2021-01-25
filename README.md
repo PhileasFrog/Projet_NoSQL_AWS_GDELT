@@ -1,8 +1,11 @@
 # Projet NOSQL MSBGD 2020-2021
 ## Contributeurs Bertrand Coureaud - Dominique Jeancler - Roberto Nobrega - Thomas Trivellato 
 
-## 1.Objectif
+## 1.Cahier des charges:
 
+Le descriptif complet du projet est consultable sur http://andreiarion.github.io/projet2021.html
+
+**Objectif**
 Proposer un système de stockage distribué, résilient et performant sur AWS permettant de requêter sur la base de données GDELT les recherches suivantes : 
 a.	afficher le nombre d’articles/évènements qui parlent de COVID qu’il y a eu pour chaque triplet (jour, pays de l’évènement, langue de l’article)
 b.	pour un pays donné en paramètre, affichez les évènements qui y ont eu place triées par le nombre de mentions (tri décroissant); permettez une agrégation par jour/mois/année
@@ -16,34 +19,31 @@ d.	est-ce qu’on observe des patterns dans l’evolution qui pourraient nous pe
 *	Utiliser AWS pour déployer le cluster.
 
 **Livrables**
-
 Vous devrez fournir:
 * une archive avec votre code source (ou un lien sur github…)
 * une courte présentation de votre architecture, modélisation, les avantages et inconvénients, des choix de modélisation et d’architecture, volumétrie, limites et contraintes (max 10 slides de présentation)
 
-## 2. Choix de l’architecture
+## 2. Choix de l’architecture et justification
 
-**Stockage données brutes** : Pour répondre aux contraintes, on stocke l’ensemble des zips de l’année 2020 dans un bucket S3. Pour un an cela représente 500Go de données.
-La récupération et le stockage a été obtenu via le notebook lienXX.
+Pour répondre aux contraintes, on propose une solution entièrement hébergée sur AWS. Stockage sur S3, traitement via un cluster Spark et persistance de la sortie du traitement sur une base de donnée Cassandra installé sur des stations EC2. 
+
+Le process se découpe en 3 étapes :
+
+* un premier traitement Spark via notre cluster EMR qui récupère les fichiers Zip de GDELT et les stocke dans nos bucket S3
+* une phase ETL où le cluster Sark va lire les zips de S3 récupérer uniquement les informations d'intérêt pour les requêtes et écrire sur nos instances Cassandra EC2
+* une phase de lecture où depuis le cluster Spark le client peut interoger et visualiser les résultats de ses requêtes
+
+La source de la phase de récupération de données est disponible ici tandis que la phase ETL et requête et intégré dans le même notebook ici.
 
 ![test.png](https://github.com/PhileasFrog/Projet_GDELT/blob/main/bucketbc.png)
 
-**Base de données NoSQL** : Ce projet nous place dans une problématique gestion et utilisation de base de données volumineuse peu structurée. Nous avons considèré que l’objectif était donc de proposer une architecture fournissant une base de donnée NoSQL permettant au client d’effectuer des requêtes prédéfinies avec une faible latence. Nous avons choisi Cassandra avec 3 noeuds (pour résister à la panne d'un noeud) car outre son utilisation courante et sa fiabilité présente les avantages suivants :
-*	Facile d’installation
-*	Résilient à la panne
-*	Passage à l'échelle avec bonne performance
-* Typage fort
-*	Présence d'un langague de requêtage et d'un connecteur avec spark pour les requêtes.
+Justificactions :
 
-*Spécification* : EC2 3 instances "t2.micro"
+Pour exécuter du traitement massif en parallèle, on a besoin d’un outil type Spark. On a donc choisi par facilité un cluster EMR avec Spark et l’interface Zeppelin préinstallé. Zeppelin a l’avantage notamment d’offrir des outils intégrés de visualisation très pratiques. 
 
-![test.png](https://github.com/PhileasFrog/Projet_GDELT/blob/main/test.PNG)
+Concernant, la gestion base de données, l'équipe a choisi Cassandra car c’est un outil très répandu et fiable et qui offre une bonne performance pour le passage à l’échelle. Par ailleurs parmi les outils noSQL vus en cours, l'équipe a pensé que cette solution s’adaptait à la problèmatique compte tenu de la nature de la donnée à écrire (structuré et typé via les dataframes) et d'un point de vue confort client Cassandra ayant une très bonne performance en lecture et un langage de requête familier.
 
-**ETL** : Pour effectuer l'étape ETL (extraction analyser et chargement) sur les données bruts sotckées sur S3 et avant chargement sous forme de table persistantes sur notre cluster Cassandra, nous avons utilisé un cluster EMR avec le framework Spark et Zeppelin préinstallé. Spark permet d'accélérer les traitement par utilisation de la RAM et d'enchainer différentes phase de traitement à l'inverse de MapReduce. Nous sommes passés par EMR pour éviter d'avoir à réinstaller nous même Spark et Zeppelin.
-
-*Spécification* : EMR "m4.large" Spark 2.3.2 Zeppelin 0.8.0
-
-IMAGE DE L'ARCHITECTURE
+Pour finir nous avons choisi à minima une installation avec 3 instances pour tolérer la panne d’un nœud comme exigé dnas le cahier des charges.
 
 ## 3. Création des tables pour répondre aux requêtes
 
@@ -58,6 +58,8 @@ IMAGE DE L'ARCHITECTURE
 ## 4. Peformances
 
 ## 5. Conclusions voies d'améliorations
+
+#
 
 
 
