@@ -41,12 +41,12 @@ Comme illustré le process se découpe en 3 étapes :
 
 * un premier traitement Spark via notre cluster EMR qui récupère les fichiers Zip de GDELT et les stocke dans nos bucket S3 soit environ 500 Go de donnée pour un an
 ![test.png](https://github.com/PhileasFrog/Projet_GDELT/blob/main/bucketbc.png)
-* une phase ETL où le cluster Sark va lire les zips de S3 récupérer uniquement les informations d'intérêt pour les requêtes et écrire sur nos instances Cassandra EC2
-* une phase de lecture où depuis le cluster Spark le client peut interoger et visualiser les résultats de ses requêtes
+* une phase ETL où le cluster Sark va lire les zips de S3, récupérer uniquement les informations d'intérêt pour les requêtes sous forme de dataframe et enfin écrire sur nos instances Cassandra EC2.
+* une phase de lecture, où depuis le cluster Spark, le client peut interoger et visualiser les résultats de ses requêtes
 
 La source de la phase de récupération de données est disponible ici tandis que la phase ETL et requête et intégré dans le même notebook ici.
 
-Justificactions :
+*Justificactions* :
 
 Pour exécuter du traitement massif en parallèle, on a besoin d’un outil type Spark. On a donc choisi par un cluster EMR avec Spark et l’interface Zeppelin préinstallée. Zeppelin a l’avantage notamment d’offrir des outils intégrés de visualisation très pratiques. Un inconvénient rencontré lors du projet est la nécessité de reconfigurer notre interpreteur Zeppelin à chaque démarrage de cluster (installation de fichier jar et adresssage des instances Cassandra). Nous n'avons pas trouvé de solution pour sauvegarder ces paramètres contrairement à certains camarades.
 
@@ -54,20 +54,13 @@ Concernant, la gestion base de données, l'équipe a choisi Cassandra car c’es
 
 ## 3. Création des tables pour répondre aux requêtes
 
-* Préambule compte tenu de l'énoncé nous avons considérer que le filtre COVID était appliqué sur l'ensemble des requêtes. Par ailleurs ne trouvant que peu de thème avec la mention "COVID", nous avons pris la décision d'ajouter le terme "CORONAVIRUS" dans le filtre. Le notebook Zeppelin pour accéder à la phase ETL et requête est accessible sur ce lien XXX.
+Préambule compte tenu de l'énoncé nous avons considérer que le filtre COVID était appliqué sur l'ensemble des requêtes. Par ailleurs ne trouvant que peu de thème avec la mention "COVID", nous avons pris la décision d'ajouter le terme "CORONAVIRUS" dans le filtre. Ayant ce filtre commun nous avons donc effectuer une première étape  
 
 ### 3.1 Requête 1
 
-### 3.2 Requête 1
+### 3.2 Requête 2
 
-### 3.3 Requête 1
-
-## 4. Peformances
-
-## 5. Conclusions voies d'améliorations
-
-#
-
+### 3.3 Requête 3
 
 
 
