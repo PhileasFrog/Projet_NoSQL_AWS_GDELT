@@ -25,7 +25,7 @@ Vous devrez fournir:
 
 ## 2. Choix de l’architecture et justification
 
-Pour répondre aux contraintes, on propose une solution entièrement hébergée sur AWS. Stockage sur S3, traitement via un cluster Spark et persistance de la sortie du traitement sur une base de donnée Cassandra installé sur des stations EC2. 
+Pour répondre aux contraintes, on propose une solution entièrement hébergée sur AWS. Stockage sur S3, traitement via un cluster Spark et persistance de la sortie du traitement sur une base de donnée Cassandra installée sur des instances EC2. 
 
 Le process se découpe en 3 étapes :
 
