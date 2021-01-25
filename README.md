@@ -27,9 +27,9 @@ d.	est-ce qu’on observe des patterns dans l’evolution qui pourraient nous pe
 
 Vous devrez fournir:
 * une archive avec votre code source (ou un lien sur github…)
-> ici
+> https://github.com/PhileasFrog/Projet_GDELT/tree/main/Zeppelin_notebooks
 * une courte présentation de votre architecture, modélisation, les avantages et inconvénients, des choix de modélisation et d’architecture, volumétrie, limites et contraintes (max 10 slides de présentation)
-> ici : https://github.com/PhileasFrog/Projet_GDELT/tree/main/Presentation
+> https://github.com/PhileasFrog/Projet_GDELT/tree/main/Presentation
 
 ## 2. Choix de l’architecture et justification
 
