@@ -33,7 +33,7 @@ Vous devrez fournir:
 
 ## 2. Choix de l’architecture et justification
 
-**Descriptif ** :
+**Descriptif** :
 
 Pour répondre aux contraintes, on propose une solution entièrement hébergée sur AWS. Stockage sur S3, traitement via un cluster Spark sur EMR et persistance de la sortie du traitement sur une base de donnée Cassandra installée sur des instances EC2. 
 
