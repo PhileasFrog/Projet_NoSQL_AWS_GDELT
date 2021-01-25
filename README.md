@@ -3,7 +3,7 @@
 
 ## 1.Cahier des charges:
 
-Le descriptif complet du projet est consultable sur http://andreiarion.github.io/projet2021.html
+Le descriptif complet du sujet du projet est consultable sur http://andreiarion.github.io/projet2021.html
 
 **Objectif** : 
 
