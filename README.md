@@ -54,7 +54,7 @@ Concernant, la gestion base de données, l'équipe a choisi Cassandra car c’es
 
 ## 3. Création des tables pour répondre aux requêtes
 
-Le détails des requêtes et résultats sont consultables dans la présentation ppt disponible ici.
+Le détails des requêtes et résultats sont consultables dans la présentation ppt disponible dans https://github.com/PhileasFrog/Projet_GDELT/tree/main/Presentation.
 
 Préambule compte tenu de l'énoncé nous avons considéré que le filtre COVID était appliqué sur l'ensemble des requêtes. Pour appliquer ce filtre nous nous sommes basés sur la colonne « Theme » des éléments gkg de GDELT. Ne trouvant que peu de thème avec la mention "COVID", nous avons pris la décision d'ajouter le terme "CORONAVIRUS" dans le filtre.
 
