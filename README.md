@@ -27,7 +27,7 @@ d.	est-ce qu’on observe des patterns dans l’evolution qui pourraient nous pe
 
 Vous devrez fournir:
 * une archive avec votre code source (ou un lien sur github…)
-> https://github.com/PhileasFrog/Projet_GDELT/tree/main/Zeppelin_notebooks (deux notebook : un pour la récupération des data, un pour ETL et query)
+> https://github.com/PhileasFrog/Projet_GDELT/tree/main/Zeppelin_notebooks (deux notebooks : un pour la récupération des data, un pour ETL et query)
 * une courte présentation de votre architecture, modélisation, les avantages et inconvénients, des choix de modélisation et d’architecture, volumétrie, limites et contraintes (max 10 slides de présentation)
 > https://github.com/PhileasFrog/Projet_GDELT/tree/main/Presentation
 
@@ -45,7 +45,7 @@ Comme illustré le process se découpe en 3 étapes :
 ![s3snap](https://github.com/PhileasFrog/Projet_GDELT/blob/main/Screenshot/bucketbc.png)
 * une phase ETL où le cluster Sark va lire les zips de S3, récupérer uniquement les informations d'intérêt pour les requêtes sous forme de dataframe et enfin écrire sur nos instances Cassandra EC2.
 * une phase de lecture, où depuis le cluster Spark, le client peut interoger et visualiser les résultats de ses requêtes
-![requetevisu] https://github.com/PhileasFrog/Projet_GDELT/blob/main/Screenshot/sqlsh.png
+![requetevisu](https://github.com/PhileasFrog/Projet_GDELT/blob/main/Screenshot/sqlsh.png)
 
 **Justifications** :
 
