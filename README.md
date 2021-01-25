@@ -23,7 +23,7 @@ d.	est-ce qu’on observe des patterns dans l’evolution qui pourraient nous pe
 *	Pre-charger une année de données dans votre cluster
 *	Utiliser AWS pour déployer le cluster.
 
-**Livrables**
+**Livrables** :
 
 Vous devrez fournir:
 * une archive avec votre code source (ou un lien sur github…)
@@ -35,15 +35,16 @@ Vous devrez fournir:
 
 Pour répondre aux contraintes, on propose une solution entièrement hébergée sur AWS. Stockage sur S3, traitement via un cluster Spark sur EMR et persistance de la sortie du traitement sur une base de donnée Cassandra installée sur des instances EC2. 
 
-Le process se découpe en 3 étapes :
+![test.png](https://github.com/PhileasFrog/Projet_GDELT/blob/main/bucketbc.png)
 
-* un premier traitement Spark via notre cluster EMR qui récupère les fichiers Zip de GDELT et les stocke dans nos bucket S3
+Comme illustré le process se découpe en 3 étapes :
+
+* un premier traitement Spark via notre cluster EMR qui récupère les fichiers Zip de GDELT et les stocke dans nos bucket S3 soit environ 500 Go de donnée pour un an
+![test.png](https://github.com/PhileasFrog/Projet_GDELT/blob/main/bucketbc.png)
 * une phase ETL où le cluster Sark va lire les zips de S3 récupérer uniquement les informations d'intérêt pour les requêtes et écrire sur nos instances Cassandra EC2
 * une phase de lecture où depuis le cluster Spark le client peut interoger et visualiser les résultats de ses requêtes
 
 La source de la phase de récupération de données est disponible ici tandis que la phase ETL et requête et intégré dans le même notebook ici.
-
-![test.png](https://github.com/PhileasFrog/Projet_GDELT/blob/main/bucketbc.png)
 
 Justificactions :
 
